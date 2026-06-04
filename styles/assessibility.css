@@ -1,0 +1,41 @@
+        /* ═══════════════════════════════════════════════════════════════
+   LAYER 0B — ACCESSIBILITY & USER PREFERENCES
+   ═══════════════════════════════════════════════════════════════ */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .parallax-layer,
+            .tilt-card,
+            .hs-track,
+            .team-track {
+                will-change: auto !important;
+                transform: none !important;
+            }
+
+            .cursor-ring,
+            .cursor-dot {
+                display: none !important;
+            }
+
+            .scroll-progress {
+                display: none !important;
+            }
+        }
+
+        @media (prefers-contrast: more) {
+            :root {
+                --muted: rgba(240, 239, 232, 0.90);
+                --subtle: rgba(240, 239, 232, 0.70);
+                --faint: rgba(240, 239, 232, 0.55);
+                --border: rgba(255, 255, 255, 0.14);
+            }
+        }
