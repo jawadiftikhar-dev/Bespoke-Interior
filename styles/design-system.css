@@ -1,0 +1,83 @@
+               /* ═══════════════════════════════════════════════════════════════
+   LAYER 0A — DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════════════ */
+
+       :root {
+            /* ── Core palette ── */
+            --bg: #040406;
+            --bg-alt: #050507;
+            --bg-deep: #020203;
+            --text: #f0efe8;
+            --text-inverse: #040406;
+            --accent: #c9a96e;
+            --accent-rgb: 201, 169, 110;
+            --accent2: #7b9ea8;
+            --accent3: #a87b8e;
+
+            /* ── Semantic foreground (WCAG AA compliant) ── */
+            --muted: rgba(240, 239, 232, 0.72);
+            --subtle: rgba(240, 239, 232, 0.50);
+            --faint: rgba(240, 239, 232, 0.35);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-soft: rgba(255, 255, 255, 0.05);
+            --border-accent: rgba(var(--accent-rgb), 0.25);
+
+            /* ── Typography ── */
+            --font-serif: Georgia, "Times New Roman", serif;
+            --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+            /* ── SPACING SCALE (px) ── */
+            --sp-0: 0px;
+            --sp-1: 2px;
+            --sp-2: 4px;
+            --sp-3: 6px;
+            --sp-4: 8px;
+            --sp-5: 10px;
+            --sp-6: 12px;
+            --sp-7: 14px;
+            --sp-8: 16px;
+            --sp-10: 20px;
+            --sp-12: 24px;
+            --sp-14: 28px;
+            --sp-16: 32px;
+            --sp-20: 40px;
+            --sp-24: 48px;
+            --sp-28: 56px;
+            --sp-32: 64px;
+            --sp-40: 80px;
+            --sp-48: 96px;
+            --sp-56: 112px;
+            --sp-64: 128px;
+
+            /* Section padding */
+            --section-x: 86px;
+            --section-y: 96px;
+
+            /* ── SHADOW SYSTEM ── */
+            --sh-sm: 0 8px 24px rgba(0, 0, 0, 0.30);
+            --sh-md: 0 20px 48px rgba(0, 0, 0, 0.40);
+            --sh-lg: 0 32px 64px rgba(0, 0, 0, 0.50);
+            --sh-xl: 0 48px 96px rgba(0, 0, 0, 0.55);
+            --sh-glow: 0 0 40px rgba(var(--accent-rgb), 0.25);
+            --sh-glow-lg: 0 0 80px rgba(var(--accent-rgb), 0.35);
+
+            /* ── RADIUS SYSTEM ── */
+            --r-none: 0px;
+            --r-sm: 2px;
+            --r-md: 6px;
+            --r-lg: 12px;
+            --r-full: 9999px;
+
+            /* ── DURATION TOKENS ── */
+            --d-fast: 0.18s;
+            --d-base: 0.30s;
+            --d-slow: 0.50s;
+            --d-lazy: 0.75s;
+            --d-glacial: 1.50s;
+
+            /* ── EASING CURVES ── */
+            --e-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --e-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+            --e-out-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --e-curtain: cubic-bezier(0.77, 0, 0.175, 1);
+        }

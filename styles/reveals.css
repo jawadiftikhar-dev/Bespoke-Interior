@@ -1,0 +1,67 @@
+        /* ═══════════════════════════════════════════════════════════════
+   CURTAIN REVEALS
+   ═══════════════════════════════════════════════════════════════ */
+
+        .reveal-container {
+            position: relative;
+            overflow: hidden !important;
+            display: block;
+        }
+
+        .reveal-container .curtain {
+            position: absolute;
+            inset: -1px;
+            background: var(--bg);
+            z-index: 5;
+            pointer-events: none;
+            transition: transform var(--d-glacial) var(--e-curtain);
+        }
+
+        .reveal-container .curtain.reveal-left,
+        .reveal-container .curtain.revealed-left {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        .reveal-container .curtain.reveal-right,
+        .reveal-container .curtain.revealed-right {
+            transform-origin: right;
+            transform: scaleX(1);
+        }
+
+        .reveal-container .curtain.reveal-top,
+        .reveal-container .curtain.revealed-top {
+            transform-origin: top;
+            transform: scaleY(1);
+        }
+
+        .reveal-container .curtain.reveal-bottom,
+        .reveal-container .curtain.revealed-bottom {
+            transform-origin: bottom;
+            transform: scaleY(1);
+        }
+
+        .reveal-container.revealed .curtain.reveal-left,
+        .reveal-container.revealed .curtain.revealed-left,
+        .reveal-container.revealed .curtain.reveal-right,
+        .reveal-container.revealed .curtain.revealed-right {
+            transform: scaleX(0);
+        }
+
+        .reveal-container.revealed .curtain.reveal-top,
+        .reveal-container.revealed .curtain.revealed-top,
+        .reveal-container.revealed .curtain.reveal-bottom,
+        .reveal-container.revealed .curtain.revealed-bottom {
+            transform: scaleY(0);
+        }
+
+        .reveal-container .reveal-target {
+            width: 100%;
+            height: 100%;
+            transform: scale(1.12);
+            transition: transform 2s var(--e-out-smooth) 0.15s;
+        }
+
+        .reveal-container.revealed .reveal-target {
+            transform: scale(1);
+        }

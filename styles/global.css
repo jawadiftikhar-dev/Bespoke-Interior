@@ -1,0 +1,118 @@
+        /* ═══════════════════════════════════════════════════════════════
+   LAYER 1 — RESET
+   ═══════════════════════════════════════════════════════════════ */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            cursor: none;
+            width: 100%;
+        }
+
+        #main {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        #main-content {
+            width: calc(100% - 50px);
+            box-sizing: border-box;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(var(--accent-rgb), 0.25);
+            border-radius: var(--r-full);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+   LAYER 2 — INTERACTIVE CURSOR
+   ═══════════════════════════════════════════════════════════════ */
+
+        .cursor-ring {
+            position: fixed;
+            width: 35px;
+            height: 35px;
+            border: 1px solid rgba(var(--accent-rgb), 0.4);
+            border-radius: var(--r-full);
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition:
+                width var(--d-slow),
+                height var(--d-slow),
+                background-color var(--d-slow),
+                border-color var(--d-slow);
+            mix-blend-mode: difference;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent);
+            border-radius: var(--r-full);
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-hovered {
+            width: 55px;
+            height: 55px;
+            background-color: rgba(var(--accent-rgb), 0.08);
+            border-color: var(--accent);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+   LAYER 3 — AMBIENT OVERLAYS
+   ═══════════════════════════════════════════════════════════════ */
+
+        .ambient-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .ambient-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 128px 128px;
+        }
